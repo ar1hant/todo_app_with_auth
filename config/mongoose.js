@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/todo_db');
 // main().catch(err => console.log(err));
 
 // async function main() {
@@ -16,7 +15,9 @@ const mongoose = require('mongoose');
 
 const url = "mongodb+srv://razziil:arihant100@arihant-s-cluster.zgpmp.mongodb.net/test_db?retryWrites=true&w=majority";
 
-mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
-.catch((err) => console.log(error.message));
+async function dummy(){
+  await mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
+.catch((err) => console.log(err.message));
+}
 
-// mongoose.set('useFindAndModify', false);
+dummy();
